@@ -24,8 +24,8 @@ for i in range(len(points_coords)):
     hypotenuse = math.sqrt(curr_x ** 2 + curr_y ** 2)
 
     if hypotenuse < circle_rad:
-        print(str('1') + "\n")
+        print(1)
     elif hypotenuse > circle_rad:
-        print(str('2') + "\n")
+        print(2)
     else:
-        print(str("0") + "\n")
+        print(0)
