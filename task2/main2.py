@@ -13,19 +13,24 @@ with open(args.points_coord_path, 'r') as file1:
     points_coords = [line.strip() for line in file1.readlines()]
 
 circle_rad = int(circle_chars[1])
+circle_x = int(circle_chars[0][0])
+circle_y = int(circle_chars[0][2])
 
 curr_x = 0
 curr_y = 0
-hypotenuse = 0
+dist = 0
 
 for i in range(len(points_coords)):
     curr_x = int(points_coords[i][0])
     curr_y = int(points_coords[i][2])
-    hypotenuse = math.sqrt(curr_x ** 2 + curr_y ** 2)
+    dist = math.sqrt((curr_x - circle_x) ** 2 + (curr_y - circle_y) ** 2)
 
-    if hypotenuse < circle_rad:
-        print(1)
-    elif hypotenuse > circle_rad:
-        print(2)
-    else:
+    if dist == circle_rad:
         print(0)
+    elif dist > circle_rad:
+        print(2)
+    elif dist < circle_rad:
+        print(1)
+
+
+
