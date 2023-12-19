@@ -27,7 +27,6 @@ while end_digit != 1:
         saved_index = i
         i += 1
 
-    print(current_array)
     result_array.append(current_array[0])
     end_digit = current_array[args.array_length - 1]
     current_array = [0] * args.array_length
